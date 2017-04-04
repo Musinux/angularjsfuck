@@ -5,6 +5,7 @@ The goals is to permit the execution of any javascript code inside angularjs exp
  
 Usage:
 ```
+npm install
 node index.js <javascript expression> [--clean]
 ```
 Output:
