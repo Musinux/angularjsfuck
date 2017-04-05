@@ -55,7 +55,7 @@ function mappingReduced (str, indexes) {
   return ret
 }
 
-function e2e (str) {
+function hard (str) {
   let ret = ''
   let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'aa', 'ab', 'ac', 'ad', 'ae', 'af', 'ag', 'ah', 'ai', 'aj', 'ak', 'al', 'am', 'an', 'ao']
@@ -78,9 +78,19 @@ function e2e (str) {
   '}}'
 }
 
-if (args._[0]) {
-  console.log(args._[0], ':')
-  console.log(e2e(args._[0]))
+function soft (str) {
+  return '{{constructor.constructor((false+[]).fromCharCode(' + (str.split('').map((o) => o.charCodeAt(0))) + '))}}'
 }
 
-module.exports = e2e
+if (args._[0]) {
+  console.log(args._[0], ':')
+  if (args.hard) {
+    console.log(hard(args._[0]))
+  } else {
+    console.log(soft(args._[0]))
+  }
+}
+
+
+
+module.exports = {hard, soft}
